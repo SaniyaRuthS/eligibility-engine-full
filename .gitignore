@@ -1,55 +1,37 @@
-Set-Content -Path .gitignore -Value @"
-# --- Node Modules ---
+# Dependencies
 node_modules/
 
-# --- Environment Files ---
+# Next.js
+.next/
+out/
+
+# Environment variables
 .env
 .env.local
 .env.development
-.env.test
 .env.production
+.env.test
+.env.example
 
-# --- Logs ---
+# Logs
 npm-debug.log*
 yarn-debug.log*
 yarn-error.log*
-pnpm-debug.log*
 
-# --- Build Output ---
-.next/
-out/
-dist/
-build/
-
-# --- OS Files ---
+# OS files
 .DS_Store
 Thumbs.db
 
-# --- Editor files ---
-.vscode/
-.idea/
-
-# --- TypeScript ---
-*.tsbuildinfo
-
-# --- Drizzle ORM ---
+# Drizzle
 drizzle/
-migrations/
+drizzle/*.json
 
-# --- Temp Files ---
-*.log
-*.tmp
-*.swp
+# TypeScript build
+dist/
 
-# --- Local DB ---
-*.db
-*.sqlite
+# VS Code settings
+.vscode/
 
-# --- Lockfiles (choose your package manager) ---
-package-lock.json
+# Lock files (optional – keep one)
 pnpm-lock.yaml
-yarn.lock
-
-# --- Misc ---
-coverage/
-"@
+next-env.d.ts
