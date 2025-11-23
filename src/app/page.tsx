@@ -1,4 +1,6 @@
 import Link from "next/link";
+import { ExportButtons } from "@/components/eligibility/ExportButtons";
+
 
 export default function HomePage() {
   return (
@@ -7,6 +9,9 @@ export default function HomePage() {
       <p className="text-slate-600">
         Go to the eligibility module to configure rules and run auto-shortlisting.
       </p>
+
+      <ExportButtons />
+
       <Link
         href="/portal/eligibility"
         className="inline-flex items-center rounded-2xl bg-indigo-600 px-4 py-2 text-sm font-medium text-white hover:bg-indigo-700"

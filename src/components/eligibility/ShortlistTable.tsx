@@ -18,15 +18,16 @@ interface ShortlistTableProps {
 export function ShortlistTable({ rows }: ShortlistTableProps) {
   if (!rows.length) {
     return (
-      <Card className="text-sm text-slate-500">
+      <Card className="text-sm text-slate-500 p-4">
         Run the auto-shortlisting engine to see eligible and ineligible students.
       </Card>
     );
   }
 
   return (
-    <Card>
+    <Card className="p-4">
       <h2 className="mb-3 text-lg font-semibold">Shortlisting Results</h2>
+
       <div className="max-h-96 overflow-auto rounded-2xl border border-slate-100">
         <Table>
           <THead>
@@ -39,6 +40,7 @@ export function ShortlistTable({ rows }: ShortlistTableProps) {
               <TH>Reason (if ineligible)</TH>
             </TR>
           </THead>
+
           <TBody>
             {rows.map((row) => (
               <TR key={row.id}>

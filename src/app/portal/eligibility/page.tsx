@@ -5,6 +5,7 @@ import { Card } from "../../../components/ui/card";
 import { getEligibilityRulesAction } from "./actions";
 import ShortlistClient from "./ShortlistClient";
 import type { ShortlistRow } from "../../../components/eligibility/ShortlistTable";
+import { ExportButtons } from "../../../components/eligibility/ExportButtons";
 
 async function fetchInitialData() {
   const rules = await getEligibilityRulesAction();
@@ -18,9 +19,12 @@ export default async function EligibilityPage() {
   return (
     <main className="space-y-6">
       <div className="space-y-1">
-        <h1 className="text-2xl font-semibold">Eligibility & Auto-Shortlisting</h1>
+        <h1 className="text-2xl font-semibold">
+          Eligibility & Auto-Shortlisting
+        </h1>
         <p className="text-sm text-slate-600">
-          Configure eligibility rules, automatically shortlist students, lock the shortlist, and export.
+          Configure eligibility rules, automatically shortlist students,
+          lock the shortlist, and export.
         </p>
       </div>
 
@@ -29,9 +33,13 @@ export default async function EligibilityPage() {
         <FreezeCard />
       </div>
 
+      {/* Shortlist Table */}
       <Suspense fallback={<Card>Loading shortlist...</Card>}>
         <ShortlistClient initialRows={rows} />
       </Suspense>
+
+      {/* Export Buttons BELOW the shortlist */}
+      <ExportButtons />
     </main>
   );
 }
